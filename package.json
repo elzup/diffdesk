@@ -1,0 +1,26 @@
+{
+  "name": "diffdesk",
+  "version": "0.1.0",
+  "description": "A text comparison tool",
+  "main": "main.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "elzup",
+  "license": "MIT",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.0.0",
+    "electron": "^25.0.0",
+    "typescript": "^5.8.3",
+    "vite": "^4.0.0",
+    "vite-plugin-electron": "^0.11.2"
+  },
+  "dependencies": {
+    "diff": "^5.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  }
+}
