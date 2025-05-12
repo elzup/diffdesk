@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "start": "electron .",
-    "test": "playwright test"
+    "test": "playwright test",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "elzup",
@@ -16,9 +17,11 @@
     "@playwright/test": "^1.52.0",
     "@vitejs/plugin-react": "^4.0.0",
     "electron": "^25.0.0",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.8.3",
     "vite": "^4.0.0",
-    "vite-plugin-electron": "^0.11.2"
+    "vite-plugin-electron": "^0.11.2",
+    "vite-plugin-pwa": "^1.0.0"
   },
   "dependencies": {
     "diff": "^5.0.0",
