@@ -6,12 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "start": "electron ."
+    "start": "electron .",
+    "test": "playwright test"
   },
   "keywords": [],
   "author": "elzup",
   "license": "MIT",
   "devDependencies": {
+    "@playwright/test": "^1.52.0",
     "@vitejs/plugin-react": "^4.0.0",
     "electron": "^25.0.0",
     "typescript": "^5.8.3",
