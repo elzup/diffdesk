@@ -1,5 +1,5 @@
-import React from 'react'
-import { diffLines } from 'diff'
+import React, { useState } from 'react'
+import { diffLines, diffChars } from 'diff'
 
 interface DiffViewProps {
   text1: string
@@ -7,11 +7,15 @@ interface DiffViewProps {
 }
 
 function DiffView({ text1, text2 }: DiffViewProps) {
-  const diff = diffLines(text1, text2)
+  const [inlineDiff, setInlineDiff] = useState(true)
+  const diff = inlineDiff ? diffChars(text1, text2) : diffLines(text1, text2)
 
   return (
     <div>
       <h2>Diff View</h2>
+      <button onClick={() => setInlineDiff(!inlineDiff)}>
+        {inlineDiff ? '行Diff' : '文字Diff'}
+      </button>
       {diff.map((part, index) => (
         <span
           key={index}
