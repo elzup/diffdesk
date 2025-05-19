@@ -7,15 +7,17 @@ interface DiffViewProps {
 }
 
 function DiffView({ text1, text2 }: DiffViewProps) {
-  const [inlineDiff, setInlineDiff] = useState(true)
+  const [inlineDiff, setInlineDiff] = useState(false)
   const diff = inlineDiff ? diffChars(text1, text2) : diffLines(text1, text2)
 
   return (
     <div>
       <h2>Diff View</h2>
-      <button onClick={() => setInlineDiff(!inlineDiff)}>
-        {inlineDiff ? '行Diff' : '文字Diff'}
-      </button>
+      <div>
+        <button onClick={() => setInlineDiff(!inlineDiff)}>
+          {inlineDiff ? '行Diff' : '文字Diff'}
+        </button>
+      </div>
       {diff.map((part, index) => (
         <span
           key={index}
@@ -26,6 +28,7 @@ function DiffView({ text1, text2 }: DiffViewProps) {
               : part.removed
               ? '#ffe6e6'
               : 'transparent',
+            whiteSpace: 'pre-wrap',
           }}
         >
           {part.value}
