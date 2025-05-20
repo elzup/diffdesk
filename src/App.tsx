@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import DiffView from './components/DiffView.tsx'
+import DiffView from './components/DiffView'
 
 function App() {
   const [text1, setText1] = useState('')
